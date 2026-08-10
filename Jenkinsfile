@@ -38,5 +38,11 @@ pipeline {
                 bat 'mvnw.cmd package -DskipTests'
             }
         }
+
+        stage('Docker Image') {
+            steps {
+                bat 'docker build -t securitydemo1:latest .'
+            }
+        }
     }
 }
