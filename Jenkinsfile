@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
 
         stage('Checkout') {
@@ -18,6 +22,14 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'mvnw.cmd test'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    bat 'mvnw.cmd sonar:sonar'
+                }
             }
         }
 
