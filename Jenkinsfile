@@ -11,19 +11,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                sh 'mvnw clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'mvnw test'
             }
         }
 
         stage('Jar') {
             steps {
-                sh 'mvn package -DskipTests'
+                sh 'mvnw package -DskipTests'
             }
         }
     }
