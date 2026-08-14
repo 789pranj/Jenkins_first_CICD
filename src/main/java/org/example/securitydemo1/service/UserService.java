@@ -12,4 +12,9 @@ public class UserService {
     public String printName() {
         return "Nikhil";
     }
+    
+    public String printNames() {
+        return "Nikhilyadav";
+    }
+
 }
