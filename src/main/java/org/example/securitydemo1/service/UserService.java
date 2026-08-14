@@ -8,4 +8,8 @@ public class UserService {
     public String getAllUsers() {
         return "All users";
     }
+
+    public String printName() {
+        return "Nikhil";
+    }
 }
